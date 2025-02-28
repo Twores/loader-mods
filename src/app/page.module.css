@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "NeueMetana";
+  src: local("NeueMetana"), 
+       url("./font/NeueMetanaNext-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NeueMetanaoutline";
+  src: local("NeueMetanaoutline"), 
+       url("./font/NeueMetanaNextOutline-Black.ttf") format("truetype");
+}
+
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -10,9 +22,8 @@
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  padding: 20px;
+  gap: 10px;
   font-family: var(--font-geist-sans);
 }
 
@@ -27,21 +38,133 @@
   }
 }
 
+
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  text-align: center;
+  gap: 64px;
   grid-row-start: 2;
 }
 
+.main .lodat {
+  font-family: "NeueMetanaoutline";
+  font-size: 60px;
+  -webkit-text-stroke: 1px #000000;
+}
+
+.main .mine {
+  font-family: "NeueMetana";
+  font-size: 140px;
+}
+
+.versions {
+  display: flex;
+  justify-content: center; /* Центрирование по горизонтали */
+  width: 100%; /* Занимает всю доступную ширину */
+  position: relative; /* Для корректной работы внутри потока */
+  margin: 0 auto; /* Дополнительное центрирование */
+}
+
+.list {
+  display: flex;
+  align-items: center; /* Выравнивание элементов по вертикали */
+  gap: 8px; /* Замена разделителям через li */
+  padding: 0;
+  margin: 0;
+}
+
+
 .main ol {
-  font-family: var(--font-geist-mono);
+  font-family: "NeueMetanaoutline";
   padding-left: 0;
   margin: 0;
-  font-size: 14px;
+  font-size: 64px;
+  padding-bottom: 20px;
   line-height: 24px;
   letter-spacing: -0.01em;
   list-style-position: inside;
+}
+
+.list {
+  display: flex;
+  align-items: center; /* Выравнивание по вертикали */
+  gap: 8px; /* Расстояние между элементами */
+  list-style: none; /* Убираем маркеры списка */
+  padding-left: 0;
+  margin: 0;
+  margin-left: auto;
+  font-family: "NeueMetanaoutline";
+  font-size: 64px;
+  text-align: center;
+  -webkit-text-stroke: 1px #000000;
+  margin-top: -40px;
+}
+
+.mineload {
+  display: flex;
+  flex-direction: column; /* Элементы в колонку */
+  gap: 2px; /* Расстояние между элементами */
+  align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.mine:after {
+  content: '|';
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.nameversion {
+  /* Стили для текста Forge */
+  font-size: 60px;
+  color: #666;
+  padding-top: 20px;
+}
+
+.numversion {
+  /* Стили для версии */
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 80px;
+}
+
+.list li {
+  padding-right: 140px;
+}
+
+.mineload {
+  display: flex;
+  gap: 4px; /* Расстояние между текстовыми элементами */
+}
+
+.mineload .numversions {
+  font-size: 20px;
+}
+
+.mineversion {
+  padding-bottom: 10px;
+}
+
+.statusbar {
+    display: flex;
+    justify-content: center; /* Горизонтальное центрирование блока */
+    gap: 100px; /* Расстояние между элементами */
+    margin: -20px auto; /* Центрирование блока, если нужно */
+    width: 100%; /* Или задайте фиксированную ширину */
+
+  width: 791px;
+  border: 3px solid;
+  border-radius: 10px;
+  height: 74px;
+}
+
+.start, .init, .post_progress, .startsession, .done {
+  margin-top: -3px;
 }
 
 .main li:not(:last-of-type) {
@@ -89,6 +212,7 @@ a.primary {
 
 a.secondary {
   border-color: var(--gray-alpha-200);
+  background-color: #dfdfdf;
   min-width: 180px;
 }
 
