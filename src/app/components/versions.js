@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
-const GameLabelComponent = () => {
+const GameVersionComponent = () => {
   const [gameLabel, setGameLabel] = useState('зааыв');
   const [displayText, setDisplayText] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ const GameLabelComponent = () => {
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         
         const data = await response.json();
-        const label = data.game_label || 'зааыв';
+        const label = data.game_versions || 'зааыв';
         setGameLabel(label);
       } catch (err) {
         setError(err.message);
@@ -34,7 +34,7 @@ const GameLabelComponent = () => {
   }, []);
 
   useEffect(() => {
-    typingRef.current.currentLabel = gameLabel;
+    typingRef.current.currentLabel = gameVersion;
     startTypingAnimation();
 
     return () => {
@@ -70,7 +70,7 @@ const GameLabelComponent = () => {
   if (isLoading) return <div className={styles.mine}>Загрузка...</div>;
   if (error) return <div className={styles.mine}>Ошибка: {error}</div>;
 
-  return <div className={styles.mine}>{displayText}</div>;
+  return <div className={styles.nameversion}>{displayText}</div>;
 };
 
-export default GameLabelComponent;
+export default GameVersionComponent;

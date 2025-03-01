@@ -1,28 +1,18 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import GameLabelComponent from "./gamename";
+import { GameLabel } from "./components/gamename";
+import { GameVersion } from "./components/gamename";
 const baseUrl = "http://89.179.78.70:25565";
 
 export default function Home() {
   return (
     <div className={styles.page}>
         <div className={styles.lodat}>Загружаем мод на . . .</div>
-            <GameLabelComponent/>
+          <GameLabel />
 
         <div className={styles.versions}>
-          <ul className={styles.list}>
-            <li>
-              <div className={styles.mineload}>
-                <div className={styles.nameversion}>Fabric</div>
-                <div className={styles.numversion}>14.23.4.2765</div>
-              </div>
-            </li>
-            <li className={styles.separator}>/</li>
-            <li>
-              <div className={styles.mineversion}>1.19.4</div>
-            </li>
-          </ul>
+         <GameVersion />
         </div>
         <div className={styles.statusbar}>
           <div className={styles.start}>

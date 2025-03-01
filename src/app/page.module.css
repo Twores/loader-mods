@@ -63,7 +63,16 @@
   justify-content: center; /* Центрирование по горизонтали */
   width: 100%; /* Занимает всю доступную ширину */
   position: relative; /* Для корректной работы внутри потока */
-  margin: 0 auto; /* Дополнительное центрирование */
+  margin-right: 40%; /* Дополнительное центрирование */
+  margin-left: auto;
+  font-family: "NeueMetanaoutline";
+  font-size: 64px;
+  text-align: center;
+  -webkit-text-stroke: 1px #000000;
+  margin-top: -40px;
+  font-size: 60px;
+  color: #666;
+  padding-top: 20px;
 }
 
 .list {
@@ -84,21 +93,6 @@
   line-height: 24px;
   letter-spacing: -0.01em;
   list-style-position: inside;
-}
-
-.list {
-  display: flex;
-  align-items: center; /* Выравнивание по вертикали */
-  gap: 8px; /* Расстояние между элементами */
-  list-style: none; /* Убираем маркеры списка */
-  padding-left: 0;
-  margin: 0;
-  margin-left: auto;
-  font-family: "NeueMetanaoutline";
-  font-size: 64px;
-  text-align: center;
-  -webkit-text-stroke: 1px #000000;
-  margin-top: -40px;
 }
 
 .mineload {
