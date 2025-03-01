@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { GameLabel } from "./components/gamename";
-import { GameVersion } from "./components/gamename";
+import { GameLabel, GameVersion, VersionBlock } from './components/gamename.js'
+
 const baseUrl = "http://89.179.78.70:25565";
 
 export default function Home() {
@@ -11,9 +11,12 @@ export default function Home() {
         <div className={styles.lodat}>Загружаем мод на . . .</div>
           <GameLabel />
 
-        <div className={styles.versions}>
-         <GameVersion />
-        </div>
+        {/* УДАЛИТЬ ЭТОТ БЛОК */}
+        {/* <div className={styles.versions}>
+          <GameVersion />
+        </div> */}
+
+        <VersionBlock /> {/* Теперь содержит всю логику версий */}
         <div className={styles.statusbar}>
           <div className={styles.start}>
             <Image src="start.svg" alt="" width={74} height={74} />

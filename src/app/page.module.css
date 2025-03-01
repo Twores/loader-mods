@@ -73,14 +73,21 @@
   font-size: 60px;
   color: #666;
   padding-top: 20px;
+  word-spacing: 50px;
 }
 
+/* В вашем CSS-файле */
 .list {
+  list-style: none; /* Убираем маркеры списка */
+  padding-left: 0; /* Убираем отступ слева */
   display: flex;
-  align-items: center; /* Выравнивание элементов по вертикали */
-  gap: 8px; /* Замена разделителям через li */
-  padding: 0;
-  margin: 0;
+  align-items: center;
+  gap: 8px; /* Контролируем расстояние между элементами */
+}
+
+.list li {
+  display: flex;
+  align-items: center;
 }
 
 
