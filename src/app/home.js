@@ -7,7 +7,6 @@ const baseUrl = "http://89.179.78.70:25565";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
         <div className={styles.lodat}>Загружаем мод на . . .</div>
             <GameLabelComponent/>
 
@@ -47,7 +46,6 @@ export default function Home() {
           <div className={styles.blockfiles}></div>
           <div className={styles.sitefiles}></div>
         </div>
-      </main>
       <footer className={styles.footer}>
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"

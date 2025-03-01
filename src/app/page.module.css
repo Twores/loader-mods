@@ -39,7 +39,7 @@
 }
 
 
-.main {
+.page {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -47,13 +47,13 @@
   grid-row-start: 2;
 }
 
-.main .lodat {
+.page .lodat {
   font-family: "NeueMetanaoutline";
   font-size: 60px;
   -webkit-text-stroke: 1px #000000;
 }
 
-.main .mine {
+.page .mine {
   font-family: "NeueMetana";
   font-size: 140px;
 }
